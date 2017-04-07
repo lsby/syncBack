@@ -15,21 +15,22 @@ run(生成器函数, 回调函数);
 * 在生成器函数中可以调用`yield api.return(err, data)`来执行回调函数,这里的参数`err`和`data`和回调函数的参数对应.
     * 如果不调用此语句,回调函数将**不会**执行.
     * 调用此语句后,本句下面的代码将**不会**执行.
+* **不要忘了加`yield`**
 
 ## 例子
 简单的读文件:
 ```JavaScript
-var run = require('../index').run;
+var run = require('sync_back').run;
 var fs = require('fs');
 
 run(function* (api) {
     var exists = yield fs.exists('./README.md', api.nextOne); //你可以试着修改文件名来模拟出错的情况
     if (!exists)
-        api.return('文件不存在');
+        yield api.return('文件不存在');
 
     var data = yield fs.readFile('./README.md', api.next); //你可以试着修改文件名来模拟出错的情况
     if (api.err)
-        api.return('读文件失败', api.err);
+        yield api.return('读文件失败', api.err);
 
     api.return(null, data);
 }, function (err, data) {

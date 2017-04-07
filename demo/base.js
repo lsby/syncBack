@@ -4,11 +4,11 @@ var fs = require('fs');
 run(function* (api) {
     var exists = yield fs.exists('./README.md', api.nextOne);
     if (!exists)
-        api.return('文件不存在');
+        yield api.return('文件不存在');
 
     var data = yield fs.readFile('./README.md', api.next);
     if (api.err)
-        api.return('读文件失败', api.err);
+        yield api.return('读文件失败', api.err);
 
     api.return(null, data);
 }, function (err, data) {
