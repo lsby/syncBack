@@ -16,6 +16,9 @@ function f3(back) {
         back('函数3的错误数据', null);
     }, 0);
 }
+function f4(back) {
+    back(null, '函数4的回调数据');
+}
 
 describe('测试', function () {
     it('同步执行两个异步函数', function (done) {
@@ -53,6 +56,35 @@ describe('测试', function () {
 
             done();
         })
+    });
+    it('立刻返回的回调', function (done) {
+        run(function* (api) {
+            var data = yield f4(api.next);
+            assert(data == '函数4的回调数据');
+
+            done();
+        })
+    });
+    it('高并发场景', function (done) {
+        var c = 0;
+        var testC = 9999;
+        for (var i = 0; i < testC; i++) {
+            f();
+        }
+
+        function f() {
+            var t1 = (new Date()).valueOf();
+            run(function* (api) {
+                var data = yield f1(api.next);
+                c++;
+
+                var t2 = (new Date()).valueOf();
+
+                assert(t2 - t1 < 2000);
+                if (c == testC)
+                    done();
+            })
+        }
     });
     it('执行回调函数报告数据', function (done) {
         run(function* (api) {
