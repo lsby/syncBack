@@ -1,0 +1,26 @@
+{
+  "name": "sync_back",
+  "version": "1.0.0",
+  "description": "一个简单的node异步控制实现",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -t 5000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lsby/syncBack.git"
+  },
+  "keywords": [
+    "sync",
+    "sequential",
+    "callback",
+    "callback_hell",
+    "generator"
+  ],
+  "author": "lsby",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lsby/syncBack/issues"
+  },
+  "homepage": "https://github.com/lsby/syncBack#readme"
+}
