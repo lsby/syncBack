@@ -32,7 +32,7 @@ run(function* (api) {
     if (api.err)
         yield api.return('读文件失败', api.err);
 
-    api.return(null, data);
+    yield api.return(null, data);
 }, function (err, data) {
     if (err) {
         console.log(err);
