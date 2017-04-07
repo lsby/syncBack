@@ -1,5 +1,5 @@
 # syncBack
-一个简单的node异步控制实现
+嗯,这个库可以避免代码出现回调套回调的`回调地狱(callback_hell)`.
 
 ## 写法
 run(生成器函数, 回调函数);
@@ -82,6 +82,9 @@ router.post('/api/test', function (req, res, next) {
     });
 })
 ```
+
+## 兼容性
+生成器函数和`yield`关键字都是`ES6`标准的特性.所以只能用在支持`ES6`的环境中.
 
 ## 问题
 * 为什么不用co?
