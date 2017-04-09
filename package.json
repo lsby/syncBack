@@ -1,7 +1,7 @@
 {
   "name": "sync_back",
   "version": "1.0.0",
-  "description": "一个简单的node异步控制实现",
+  "description": "asynchronous control in node",
   "main": "index.js",
   "scripts": {
     "test": "mocha -t 5000"
