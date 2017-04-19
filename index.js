@@ -2,20 +2,20 @@ exports.run = function (f, back) {
 	var api = {
 		"next": function (err, data) {
 			api.err = err
-			process.nextTick(function () {
+			setTimeout(function () {
 				step(data)
-			})
+			}, 0)
 		},
 		"nextOne": function (data) {
-			process.nextTick(function () {
+			setTimeout(function () {
 				step(data)
-			})
+			}, 0)
 		},
 		"return": function (err, data) {
-			process.nextTick(function () {
+			setTimeout(function () {
 				fx.return()
 				end(err, data)
-			})
+			}, 0)
 		}
 	}
 
