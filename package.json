@@ -1,11 +1,9 @@
 {
   "name": "sync_back",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "asynchronous control in node",
   "main": "index.js",
-  "scripts": {
-    "test": "mocha -t 5000"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lsby/syncBack.git"
@@ -14,13 +12,15 @@
     "sync",
     "sequential",
     "callback",
-    "callback_hell",
-    "generator"
+    "callback_hell"
   ],
   "author": "lsby",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lsby/syncBack/issues"
   },
-  "homepage": "https://github.com/lsby/syncBack#readme"
+  "homepage": "https://github.com/lsby/syncBack#readme",
+  "dependencies": {
+    "debug": "^3.1.0"
+  }
 }
