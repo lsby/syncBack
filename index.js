@@ -6,11 +6,8 @@ module.exports = function (opt) {
 	return function (f, back) {
 		var api = {
 			"next": function (err, data) {
-				if (err && debug)
-					debugOut(err)
-
 				if (err)
-					fx.throw(err)
+					return _throw(err)
 
 				setTimeout(function () {
 					step(data)
@@ -22,7 +19,16 @@ module.exports = function (opt) {
 		step()
 
 		function step(data) {
-			fx.next(data)
+			try {
+				fx.next(data)
+			} catch (e) {
+				_throw(e)
+			}
+		}
+		function _throw(err) {
+			if (debug)
+				debugOut(err)
+			fx.throw(err)
 		}
 	}
 }

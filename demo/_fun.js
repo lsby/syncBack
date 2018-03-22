@@ -1,3 +1,5 @@
+var sync = require('../index')({ debug: true })
+
 exports.f1 = function (back) {
     setTimeout(function () {
         back(null, 'f1')
@@ -22,4 +24,9 @@ exports.f5 = function (back) {
     setTimeout(function () {
         back('f5')
     }, 1000);
+}
+exports.f6 = function (back) {
+    sync(function* (api) {
+        throw 'f6_err'
+    })
 }
