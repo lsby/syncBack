@@ -3,9 +3,9 @@ var debugOut = require('debug')('syncBack')
 module.exports = function (opt) {
 	var { debug } = opt
 
-	return function (f, back) {
+	return function (f) {
 		var api = {
-			"next": function (err, data) {
+			next: function (err, data) {
 				if (err)
 					return _throw(err)
 

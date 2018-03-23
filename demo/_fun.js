@@ -27,6 +27,8 @@ exports.f5 = function (back) {
 }
 exports.f6 = function (back) {
     sync(function* (api) {
+        yield api.next(null)
         throw 'f6_err'
+        back(null)
     })
 }
