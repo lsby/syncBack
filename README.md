@@ -197,7 +197,7 @@ sync(function* (api) {
 })
 ```
 
-Example in the `demo` folder.
+The examples that can be run are in the `demo` folder.
 
 ## Compatibility
 The `generator function` and `yield` keywords are all features of the `ES6` standard, so they can only be used in environments that support `ES6`.
