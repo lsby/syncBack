@@ -1,6 +1,6 @@
 {
   "name": "sync_back",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "asynchronous control in node",
   "main": "index.js",
   "scripts": {},
