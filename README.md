@@ -118,7 +118,7 @@ These are machine translations.Is anyone willing to help me optimize this transl
 * This is version 2.x
 * Version 1.x click [here](https://github.com/lsby/syncBack/tree/cbfdf1d77efd921de681a9abe46670aa26f9eabf)
 
-## Introduction
+## Introduction
 * `sync(gen, <back>)`
 * Avoid callback hell and write your logic like writing synchronous code.(But it doesn't block the code from running, so it can also enjoy the advantages of asynchronous)
 * For asynchronous functions whose callback form is `(err, ...)`, when the asynchronous function is wrong, the external can use `try`
@@ -130,7 +130,7 @@ These are machine translations.Is anyone willing to help me optimize this transl
 * Setting when generating `sync` function
   * `debug`:If `true`, `sync` will use the `debug` module to output error or exception information with the name `syncBack` when executing an async function to get an error or throw an exception inside `sync`.
 
-## Use
+## Use
 Execute asynchronous functions sequentially:
 ```JavaScript
 var sync = require('sync_back')({ debug: true })
