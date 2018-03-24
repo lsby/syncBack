@@ -112,7 +112,7 @@ My English is not very good.
 These are machine translations.Is anyone willing to help me optimize this translation?
 
 # syncBack
-* Well, this library can avoid the `callback_hell' in the code callback callback.
+* Well, this library can avoid the `callback_hell` in the code callback callback.
 
 ## Version
 * This is version 2.x
