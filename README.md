@@ -4,7 +4,7 @@ For the readme in English, pull down the page please.
 * 嗯,这个库可以避免代码出现回调套回调的`回调地狱(callback_hell)`.
 * 有人愿意帮我翻译成英文版吗?
 
-# 版本
+## 版本
 * 这是2.x版本
 * 1.x版本请点击[这里](https://github.com/lsby/syncBack/tree/cbfdf1d77efd921de681a9abe46670aa26f9eabf)
 
