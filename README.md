@@ -64,7 +64,7 @@ sync(function* (api) {
     })
 })
 ```
-可以向外层传递异步函数的异常
+可以使用`sync`包装异步函数 使异步函数可以向外层传递异常
 ```JavaScript
 var sync = require('sync_back')({ debug: true })
 function (back) {
@@ -120,7 +120,7 @@ These are machine translations.Is anyone willing to help me optimize this transl
 
 ## Introduction
 * `sync(gen, <back>)`
-* Avoid callback hell and write your logic like writing synchronous code.
+* Avoid callback hell and write your logic like writing synchronous code.(But it doesn't block the code from running, so it can also enjoy the advantages of asynchronous)
 * For asynchronous functions whose callback form is `(err, ...)`, when the asynchronous function is wrong, the external can use `try`
 * Supports callbacks in asynchronous functions that are not `(err, data)`
 * `sync` is itself an asynchronous function. If an exception occurs inside `sync`, or if `sync` ends normally, `sync` will call the callback function as `(err, data)` (if the callback function exists)
