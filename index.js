@@ -1,7 +1,7 @@
 var debugOut = require('debug')('syncBack')
 
 module.exports = function (opt) {
-	var { debug } = opt
+	var { debug } = opt || {}
 
 	return function (f, back) {
 		var api = {
