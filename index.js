@@ -12,6 +12,9 @@ module.exports = function (opt) {
 				}
 
 				step(data)
+			},
+			nextOne: function (data) {
+				step(data)
 			}
 		}
 		var fx = f(api)
