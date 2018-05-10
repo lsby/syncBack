@@ -17,9 +17,7 @@ sync(function* (api) {
     console.log(data)
 
     console.log('开始执行f5 f5的回调函数形式是(data)')
-    var data = yield f5(function (data) {
-        api.next(null, data)
-    })
+    var data = yield f5(api.nextOne)
     console.log('f5执行完毕 结果是')
     console.log(data)
 })
