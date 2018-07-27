@@ -1,7 +1,5 @@
-var debugOut = require('debug')('syncBack')
-
 module.exports = function (opt) {
-	var { debug } = opt || {}
+	var debug = opt.debug || true
 
 	return function (f, back) {
 		var api = {
@@ -38,7 +36,7 @@ module.exports = function (opt) {
 		}
 		function _debugOut(err) {
 			if (debug)
-				debugOut(err)
+				console.error(err)
 		}
 	}
 }

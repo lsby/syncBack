@@ -1,6 +1,6 @@
 {
   "name": "sync_back",
-  "version": "2.2.8",
+  "version": "2.3.0",
   "description": "asynchronous control in node",
   "main": "index.js",
   "scripts": {},
@@ -20,7 +20,5 @@
     "url": "https://github.com/lsby/syncBack/issues"
   },
   "homepage": "https://github.com/lsby/syncBack#readme",
-  "dependencies": {
-    "debug": "^3.1.0"
-  }
+  "dependencies": {}
 }

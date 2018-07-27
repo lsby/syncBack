@@ -18,7 +18,7 @@ For the readme in English, pull down the page please.
 
 ## 设置
 * 生成sync函数时的设置
-  * `debug`:若为`true` 则sync在执行异步函数获得错误或`sync`内部抛出异常时 会使用`debug`模块 以`syncBack`为名称输出错误或异常信息
+  * `debug`:若为`true` 则sync在执行异步函数获得错误或`sync`内部抛出异常时 会使用`console.error`输出错误或异常信息
 
 ## 使用
 顺序执行异步函数:
@@ -128,7 +128,7 @@ These are machine translations.Is anyone willing to help me optimize this transl
 
 ## Set
 * Setting when generating `sync` function
-  * `debug`:If `true`, `sync` will use the `debug` module to output error or exception information with the name `syncBack` when executing an async function to get an error or throw an exception inside `sync`.
+  * `debug`: If `true` then sync will use `console.error` to output error or exception information when executing an asynchronous function get error or `sync` internally throws an exception.
 
 ## Use
 Execute asynchronous functions sequentially:
