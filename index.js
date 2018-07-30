@@ -1,5 +1,6 @@
 module.exports = function (opt) {
-	var debug = opt.debug || true
+	opt = opt || { debug: true }
+	var debug = opt.debug
 
 	return function (f, back) {
 		var api = {
