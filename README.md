@@ -1,14 +1,27 @@
+# syncBack
+
 For the readme in English, pull down the page please.
 
-# syncBack
+---
+
+写这个库的时候,`async/await`还不流行.
+
+现在推荐大家使用`async/await`和`Promise`来编写代码,不推荐用这个库.
+
+出于兼容旧项目的考虑,我保留这个项目.
+
+---
+
 * 嗯,这个库可以避免代码出现回调套回调的`回调地狱(callback_hell)`.
 * 有人愿意帮我翻译成英文版吗?
 
 ## 版本
+
 * 这是2.x版本
 * 1.x版本请点击[这里](https://github.com/lsby/syncBack/tree/cbfdf1d77efd921de681a9abe46670aa26f9eabf)
 
 ## 简介
+
 * 形式:`sync(gen, <back>)`
 * 能避免回调地狱 只需要一点小技巧即可像编写同步函数一样编写流程(但实际上并不是同步执行 而是异步执行 不会阻塞)
 * 对于回调形式是`(err, ...)`的异步函数 当异步函数错误时 外部可以try到
@@ -17,11 +30,14 @@ For the readme in English, pull down the page please.
   * 结合这一点 可以实现向外层传递异步函数的异常 请参看`demo`
 
 ## 设置
+
 * 生成sync函数时的设置
   * `debug`:若为`true` 则sync在执行异步函数获得错误或`sync`内部抛出异常时 会使用`console.error`输出错误或异常信息
 
 ## 使用
+
 顺序执行异步函数:
+
 ```JavaScript
 var sync = require('sync_back')({ debug: true })
 sync(function* (api) {
@@ -32,7 +48,9 @@ sync(function* (api) {
     console.log(data)
 })
 ```
+
 如果异步函数运行错误会抛出异常:
+
 ```JavaScript
 var sync = require('sync_back')({ debug: true })
 sync(function* (api) {
@@ -46,7 +64,9 @@ sync(function* (api) {
     console.log('end')
 })
 ```
+
 对于回调函数非`(err, data)`形式的异步函数也能支持
+
 ```JavaScript
 var sync = require('sync_back')({ debug: true })
 sync(function* (api) {
@@ -64,7 +84,9 @@ sync(function* (api) {
     })
 })
 ```
+
 可以使用`sync`包装异步函数 使异步函数可以向外层传递异常
+
 ```JavaScript
 var sync = require('sync_back')({ debug: true })
 function (back) {
@@ -90,35 +112,47 @@ sync(function* (api) {
 更多例子在`demo`文件夹中,可直接运行.
 
 ## 兼容性
+
 `生成器函数`和`yield`关键字都是`ES6`标准的特性.所以只能用在支持`ES6`的环境中.
 
 ## 问题
+
 * 为什么不用co?
-    * ...
+  * ...
 * 为什么不用promise?
-    * ...
+  * ...
 * 为什么不用RxJS?
-    * ...
+  * ...
 * 为什么不用$%^&*?
-    * 对不起我错了...我还是喜欢这样的写法...
+  * 对不起我错了...我还是喜欢这样的写法...
 * 还会更新吗?
-    * 有bug请反馈 会尽力修
-    * 有其他需求或建议(例如类似`promise.all`的运行方式)的话 请反馈 有空会考虑加
-    * 欢迎pullRequest
+  * 有bug请反馈 会尽力修
+  * 有其他需求或建议(例如类似`promise.all`的运行方式)的话 请反馈 有空会考虑加
+  * 欢迎pullRequest
 
 ---
+
+At the time of writing this library, `async/await` was not yet popular.
+
+Now it is recommended that you use `async/await` and `Promise` to write code, and it is not recommended to use this library.
+
+For compatibility with the old project, I keep this project.
+
+---
+
 My English is not very good.
 
 These are machine translations.Is anyone willing to help me optimize this translation?
 
-# syncBack
 * Well, this library can avoid the `callback_hell` in the code callback callback.
 
 ## Version
+
 * This is version 2.x
 * Version 1.x click [here](https://github.com/lsby/syncBack/tree/cbfdf1d77efd921de681a9abe46670aa26f9eabf)
 
 ## Introduction
+
 * `sync(gen, <back>)`
 * Avoid callback hell and write your logic like writing synchronous code.(But it doesn't block the code from running, so it can also enjoy the advantages of asynchronous)
 * For asynchronous functions whose callback form is `(err, ...)`, when the asynchronous function is wrong, the external can use `try`
@@ -127,11 +161,14 @@ These are machine translations.Is anyone willing to help me optimize this transl
   * In conjunction with this, you can pass an exception of the asynchronous function to the outside, see `demo`
 
 ## Set
+
 * Setting when generating `sync` function
   * `debug`: If `true` then sync will use `console.error` to output error or exception information when executing an asynchronous function get error or `sync` internally throws an exception.
 
 ## Use
+
 Execute asynchronous functions sequentially:
+
 ```JavaScript
 var sync = require('sync_back')({ debug: true })
 sync(function* (api) {
@@ -142,7 +179,9 @@ sync(function* (api) {
     console.log(data)
 })
 ```
+
 Asynchronous function throws an exception when it returns an error:
+
 ```JavaScript
 var sync = require('sync_back')({ debug: true })
 sync(function* (api) {
@@ -156,7 +195,9 @@ sync(function* (api) {
     console.log('end')
 })
 ```
+
 Also supports asynchronous functions in the form of callback functions other than `(err, data)`
+
 ```JavaScript
 var sync = require('sync_back')({ debug: true })
 sync(function* (api) {
@@ -174,7 +215,9 @@ sync(function* (api) {
     })
 })
 ```
+
 By using the `sync` wrapper async function, you can make an async function pass an exception to the outer layer
+
 ```JavaScript
 var sync = require('sync_back')({ debug: true })
 function (back) {
@@ -200,9 +243,11 @@ sync(function* (api) {
 The examples that can be run are in the `demo` folder.
 
 ## Compatibility
+
 The `generator function` and `yield` keywords are all features of the `ES6` standard, so they can only be used in environments that support `ES6`.
 
 ## Problem
+
 * Why not to use `Co`?
   * Well…
 * Why no to use `Promise`?
