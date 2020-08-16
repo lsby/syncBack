@@ -1,0 +1,3 @@
+[submodule "script"]
+	path = script
+	url = https://gitee.com/hbybyyang/common_project_scripts.git
